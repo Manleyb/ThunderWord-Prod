@@ -1,0 +1,27 @@
+# Ignore specific system files
+*.log
+*.bak
+*.swp
+
+# Ignore node_modules directory if you use Node.js in your theme
+node_modules/
+
+# Ignore backup directories
+backups/
+
+# Ignore cache files and directories
+cache/
+*.cache
+
+# Ignore vendor directory if dependencies are managed by Composer
+vendor/
+
+# Ignore sensitive configuration files (not always present but good to include)
+wp-config.php
+.htaccess
+.env
+
+# Ignore compiled CSS or JS if you compile sass or less locally
+*.css.map
+*.js.map
+LICENSE
