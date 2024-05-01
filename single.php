@@ -8,7 +8,7 @@
           <div class="imgwrap">
             <div class="row">
               <?php
-              // Check if the post has a featured image (post thumbnail)
+              // Checking if the post has a featured image (post thumbnail)
               if (has_post_thumbnail('featured-image-1')) :
               ?>
                 <div class="col-md-4 d-flex justify-content-center">
@@ -40,7 +40,7 @@
               <?php endif; ?>
 
               <?php
-              // Check if the post has a featured image (post thumbnail)
+              // Checking if the post has a featured image (post thumbnail)
               if (has_post_thumbnail('featured-image-3')) :
               ?>
                 <div class="col-md-4 d-flex justify-content-center">

@@ -1775,62 +1775,101 @@ section {
     font-style: italic;
 }
 
-/*.col-md-3.left-column{ display: none; }*/
-
 /*--------------------------------------------------------------
-# Redesigning the author's page
+# Authors Page Template Styles
 --------------------------------------------------------------*/
 
-.author-wrapper{
-  width: 100%;
+
+.author-name,
+.author-role{
+  font-weight: bold;
+} 
+
+.authorPageWrapper{
+  width: 90%;
+  margin: 1rem auto;
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  background: #44ccdd;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
-.authors-info{
-  width: 40%;
-  padding: 1rem;
-  margin-right: 2rem;
-  background-color: aquamarine;
+/* // styling for the authors info section of the author page */
+.title{
+  width: 90%;
+  margin: 0 auto;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.subtitle{
+  width: 90%;
+  margin: .5rem auto;
+  text-align: left;
+  text-transform: capitalize;
 }
 
-.authors-info h1{
-  font-size: 1.2rem;
+.authorWrapper{
+  width: 90%;
+  margin: 1rem auto;
+}
+.authorWrapper .author{
+  margin-bottom: 5rem;
 }
 
-.authors-info img{
-  width: 100%;
+.authorWrapper .author-bio{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start ;
+  flex-direction: column; 
+}
+.author .author-bio-wrapper{
+  display: inline-block;
 }
 
-.authorsDescription{
+.author-bio img{
+  width: 200px;
+  height: auto;
+}
+
+.author-bio h2{
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  color: #008743;
+}
+.author-bio label{
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.authorWrapper .author p{
   margin-top: 1rem;
 }
 
-
-.authors-posts{
-  background-color: red;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+.authorPageWrapper .briefs-wrap .row  .justify-content-center{
+  justify-content: start !important;
 }
 
-.post{
-  padding: 1rem;
-  width: 100%;
-  background-color: aliceblue;
-}
+/* // styling for evey post in the authors page */
 
-.post .post-title{
-  font-weight: bold;
-  font-size: 1.2rem;
-}
+@media (max-width: 800px){
+  .sidebarwidget{ display: none; }
+  .authorPageWrapper{
+    display: block;
+  }
+  .author-bio{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
 
-.post-content p{
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  .author-bio img{
+    width: 100%;
+  }
+
+  .author-bio .author-bio-wrapper{
+    margin-left: 0;
+    padding-bottom: 0;
+  }
 }

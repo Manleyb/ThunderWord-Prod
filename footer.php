@@ -11,7 +11,7 @@
           </nav>
         </div>
           <div class="copyright mt-2">
-            Thunderword 2023
+            &copy; <?php echo date('Y');?> Thunderword 
           </div>
           <div class="credits mt-2">
             (206) 592-3317 Highline College 2400 S. 240th St. Des Moines, WA 98198
