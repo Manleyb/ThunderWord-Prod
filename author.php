@@ -22,7 +22,13 @@ get_header();
                         <?php echo get_avatar( get_the_author_meta( 'user_email' ), 100 ); ?>
                         <div class="author-bio-wrapper">
                             <h2><?php the_author(); ?></h2>
-                            <label>Author/Staff Reporter</label>
+                            <label>
+							  <?php
+								$author_id = get_the_author_meta('ID');
+								$author_nickname = get_the_author_meta('nickname', $author_id);
+								echo $author_nickname;
+							  ?>
+							</label>
                         </div>
                     </div>
                     <p><?php the_author_meta( 'description' ); ?></p>
