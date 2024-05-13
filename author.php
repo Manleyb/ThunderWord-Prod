@@ -44,10 +44,22 @@ get_header();
     </main>
 
     <div class="col-md-3 left-column">
-      <!-- column content starts here -->
+        <div class="whitebox">
+            <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
+                <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+                <?php dynamic_sidebar( 'home_right_1' ); ?>
+                </div><!-- #primary-sidebar -->
+            <?php endif; ?>
+        </div>
 
-      <!-- column content ends here -->
-    </div>
+        <div class="whitebox">
+            <h5>Tag cloud</h5>
+            <div class="separator"></div>
+            <div class="wbody mt-1">
+                <?php st_tag_cloud(); ?>
+            </div>
+        </div>
+  </div>
 </div>
 
 <?php
