@@ -38,6 +38,9 @@ h1, h2, h3, h4, h5, h6 {
 .briefs-wrap p{
   padding-top: 10px;
 }
+div.briefs-wrap > b > a{
+  font-size: 24px;
+}
 .wpp_position{
   color: #008743;
   font-size: 150%;
@@ -1748,42 +1751,19 @@ section {
 }
 
 
+/*--------------------------------------------------------------
+# Single Blog Page Template Styles
+--------------------------------------------------------------*/
 /* Style the author's name */
-.author-name {
-    font-weight: bold;
-    font-style: italic;
-}
-
-/* Style the author's role */
-.author-role {
-    font-style: italic;
-}
-
-/* Style the bullet separator */
-.bullet {
-    margin: 0 1rem;
-}
-
-/* Style the date */
-.date {
-    font-size: 14px;
-    font-style: italic;
-    color: #999; /* Change the color as needed */
-}
-
-.date-read{
-    font-style: italic;
+.author-name a{
+	text-decoration: none;
+	font-size: inherit;
+	color: inherit;
 }
 
 /*--------------------------------------------------------------
 # Authors Page Template Styles
 --------------------------------------------------------------*/
-
-
-.author-name,
-.author-role{
-  font-weight: bold;
-} 
 
 .authorPageWrapper{
   width: 90%;
@@ -1838,6 +1818,7 @@ section {
   margin-bottom: 0;
   color: #008743;
 }
+
 .author-bio label{
   font-style: italic;
   margin-bottom: 1rem;
@@ -1850,7 +1831,7 @@ section {
   justify-content: start !important;
 }
 
-/* // styling for evey post in the authors page */
+/* // making the author's template responsive */
 
 @media (max-width: 800px){
   .sidebarwidget{ display: none; }
