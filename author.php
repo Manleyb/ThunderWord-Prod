@@ -44,21 +44,27 @@ get_header();
     </main>
 
     <div class="col-md-3 left-column">
-        <div class="whitebox">
-            <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
-                <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-                <?php dynamic_sidebar( 'home_right_1' ); ?>
-                </div><!-- #primary-sidebar -->
-            <?php endif; ?>
-        </div>
-
-        <div class="whitebox">
-            <h5>Tag cloud</h5>
-            <div class="separator"></div>
-            <div class="wbody mt-1">
-                <?php st_tag_cloud(); ?>
-            </div>
-        </div>
+        <div class="whitebox bg-white pb-4">
+		   <div>
+			  <h5 class="rounded wpp_h5" style="text-align: center;">Most popular stories</h5>
+			  <?php
+				 if (function_exists('wpp_get_mostpopular')) {
+				 wpp_get_mostpopular(array(
+					'limit' => 5,
+					'range' => 'all',
+					'order_by' => 'view',
+					'stats_author' => 1,
+					'wpp_start' => '<div class="popular-posts">',
+					'wpp_end' => '</div>',
+					'post_html' => '<div class="posts">
+											<span class="counter">{item_position}</span>
+											<span class="wrap">{title}</span>
+										</div>',
+				 ));
+				 }
+				 ?>
+		   </div>
+		</div>
   </div>
 </div>
 
