@@ -96,7 +96,8 @@ foreach ( $categories as $category ) {
 
   </div>
 <div class="col-md-3 left-column">
-  <?php the_content(); ?>
+  <!-- // This is for the front page aka home page. -->
+  <!-- // popular posts first displayed. -->
   <div class="whitebox bg-white pb-4">
     <div>
       <h5 class="rounded wpp_h5" style="text-align: center;">Most popular stories</h5>
@@ -118,6 +119,9 @@ foreach ( $categories as $category ) {
         ?>
     </div>
   </div>
+
+  <!-- // The rest of the sidebar content displayed.  -->
+  <?php the_content(); ?>
 </div>
 </div>
     </div>
