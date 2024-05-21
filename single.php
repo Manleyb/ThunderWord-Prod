@@ -112,7 +112,7 @@
           if (function_exists('wpp_get_mostpopular')) {
           wpp_get_mostpopular(array(
             'limit' => 5,
-            'range' => 'all',
+            'range' => 'last7days',
             'order_by' => 'view',
             'stats_author' => 1,
             'wpp_start' => '<div class="popular-posts">',
@@ -128,7 +128,7 @@
       </div>
     </div>
   </div>
-  
+
   </div>
 </main>
 
