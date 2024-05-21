@@ -22,7 +22,13 @@ get_header();
                         <?php echo get_avatar( get_the_author_meta( 'user_email' ), 100 ); ?>
                         <div class="author-bio-wrapper">
                             <h2><?php the_author(); ?></h2>
-                            <label>Author/Staff Reporter</label>
+                            <label>
+							  <?php
+								$author_id = get_the_author_meta('ID');
+								$author_nickname = get_the_author_meta('nickname', $author_id);
+								echo $author_nickname;
+							  ?>
+							</label>
                         </div>
                     </div>
                     <p><?php the_author_meta( 'description' ); ?></p>
@@ -38,10 +44,28 @@ get_header();
     </main>
 
     <div class="col-md-3 left-column">
-      <!-- column content starts here -->
-
-      <!-- column content ends here -->
-    </div>
+        <div class="whitebox bg-white pb-4">
+		   <div>
+			  <h5 class="rounded wpp_h5" style="text-align: center;">Most popular stories</h5>
+			  <?php
+				 if (function_exists('wpp_get_mostpopular')) {
+				 wpp_get_mostpopular(array(
+					'limit' => 5,
+					'range' => 'last7days',
+					'order_by' => 'view',
+					'stats_author' => 1,
+					'wpp_start' => '<div class="popular-posts">',
+					'wpp_end' => '</div>',
+					'post_html' => '<div class="posts">
+											<span class="counter">{item_position}</span>
+											<span class="wrap">{title}</span>
+										</div>',
+				 ));
+				 }
+				 ?>
+		   </div>
+		</div>
+  </div>
 </div>
 
 <?php

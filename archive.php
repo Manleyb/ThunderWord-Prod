@@ -21,7 +21,27 @@
   </div>
   <div class="col-md-3 left-column">
 <!-- column content starts here -->
-
+    <div class="whitebox bg-white pb-4">
+		   <div>
+			  <h5 class="rounded wpp_h5" style="text-align: center;">Most popular stories</h5>
+			  <?php
+				 if (function_exists('wpp_get_mostpopular')) {
+				 wpp_get_mostpopular(array(
+					'limit' => 5,
+					'range' => 'all',
+					'order_by' => 'view',
+					'stats_author' => 1,
+					'wpp_start' => '<div class="popular-posts">',
+					'wpp_end' => '</div>',
+					'post_html' => '<div class="posts">
+											<span class="counter">{item_position}</span>
+											<span class="wrap">{title}</span>
+										</div>',
+				 ));
+				 }
+				 ?>
+		   </div>
+		</div>
 <!-- column content ends here -->
   </div>
 </div>
