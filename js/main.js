@@ -59,27 +59,6 @@
     }
   });
 	
-	// Active indicator for navigation links
-	$(document).ready(function() {
-		// getting the current pages URL link.
-        let currentPageUrl = window.location.href;
-		
-		// applying the active class if the link URl and page URL are equivalent.
-        $('.nav-menu a').each(function() {
-			// getting the link URL link.
-            let linkUrl = $(this).attr('href');
-            if (currentPageUrl === linkUrl) {
-                $(this).addClass('active-nav-link');
-            }
-        });
-
-		// applying and removing the active class if another link is pressed. 
-        $('.nav-menu a').click(function() {
-            $('.nav-menu a').removeClass('active-nav-link');
-            $(this).addClass('active-nav-link');
-        });
-    });
-
   // Mobile Navigation
   if ($('.nav-menu').length) {
     var $mobile_nav = $('.nav-menu').clone().prop({

@@ -241,8 +241,8 @@ div.container {
   font-family: "Open Sans", sans-serif;
 }
 /* // nav active indicator */
-.active-nav-link {
-  color: #008743 !important;
+.current-menu-item a {
+	color: #008743 !important;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
@@ -1865,7 +1865,6 @@ section {
     padding-bottom: 0;
   }
 }
-
 
 /*--------------------------------------------------------------
 # Popular Posts Template Styles
