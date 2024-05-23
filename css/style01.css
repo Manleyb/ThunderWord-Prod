@@ -241,7 +241,8 @@ div.container {
   font-family: "Open Sans", sans-serif;
 }
 /* // nav active indicator */
-.current-menu-item a {
+.current-menu-item a,
+.current-post-parent a{
 	color: #008743 !important;
 }
 
