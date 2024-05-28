@@ -29,7 +29,7 @@
 				 wpp_get_mostpopular(array(
 					'limit' => 5,
 					'range' => 'all',
-					'order_by' => 'view',
+					'order_by' => 'last7days',
 					'stats_author' => 1,
 					'wpp_start' => '<div class="popular-posts">',
 					'wpp_end' => '</div>',
