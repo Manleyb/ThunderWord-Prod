@@ -38,9 +38,6 @@ h1, h2, h3, h4, h5, h6 {
 .briefs-wrap p{
   padding-top: 10px;
 }
-div.briefs-wrap > b > a{
-  font-size: 24px;
-}
 .wpp_position{
   color: #008743;
   font-size: 150%;
@@ -1755,11 +1752,21 @@ section {
 # Single Blog Page Template Styles
 --------------------------------------------------------------*/
 /* Style the author's name */
-.author-name a{
+.d-block.author .author-name a{
 	text-decoration: none;
 	font-size: inherit;
 	color: inherit;
 }
+
+.d-block.author .author-name a:hover{
+	color: #008a72;
+}
+
+.d-block.author .author-name,
+.d-block.author .author-role{
+  text-transform: capitalize;
+  font-weight: normal;
+} 
 
 /*--------------------------------------------------------------
 # Authors Page Template Styles
@@ -1785,6 +1792,7 @@ section {
   width: 90%;
   margin: .5rem auto;
   text-align: left;
+  /* margin-bottom: 5rem; */
   text-transform: capitalize;
 }
 
@@ -1818,7 +1826,6 @@ section {
   margin-bottom: 0;
   color: #008743;
 }
-
 .author-bio label{
   font-style: italic;
   margin-bottom: 1rem;
@@ -1831,7 +1838,7 @@ section {
   justify-content: start !important;
 }
 
-/* // making the author's template responsive */
+/* // styling for evey post in the authors page */
 
 @media (max-width: 800px){
   .sidebarwidget{ display: none; }
