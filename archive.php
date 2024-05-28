@@ -28,8 +28,8 @@
 				 if (function_exists('wpp_get_mostpopular')) {
 				 wpp_get_mostpopular(array(
 					'limit' => 5,
-					'range' => 'all',
-					'order_by' => 'last7days',
+					'range' => 'last7days',
+					'order_by' => 'views',
 					'stats_author' => 1,
 					'wpp_start' => '<div class="popular-posts">',
 					'wpp_end' => '</div>',
