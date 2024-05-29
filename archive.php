@@ -19,32 +19,64 @@
 </div>
   <!-- content ends here -->
   </div>
+  
   <div class="col-md-3 left-column">
-<!-- column content starts here -->
-    <div class="whitebox bg-white pb-4">
-		   <div>
-			  <h5 class="rounded wpp_h5" style="text-align: center;">Most popular stories</h5>
-			  <?php
-				 if (function_exists('wpp_get_mostpopular')) {
-				 wpp_get_mostpopular(array(
-					'limit' => 5,
-					'range' => 'last7days',
-					'order_by' => 'views',
-					'stats_author' => 1,
-					'wpp_start' => '<div class="popular-posts">',
-					'wpp_end' => '</div>',
-					'post_html' => '<div class="posts">
+		<!-- column content starts here -->
+		<div class="whitebox bg-white pb-4">
+			<div>
+			<!--  // Here we are getting the current categories name to include in the popluar stories title -->
+				<?php 
+				  	$current_category = get_queried_object();
+					if ($current_category instanceof WP_Term && $current_category->taxonomy == 'category') {
+						$current_category_name = $current_category->name;
+						echo '<h5 class="rounded wpp_h5" style="text-align: center;text-transform: capitalize;">popular ' . $current_category_name . ' stories</h5>';
+					} 
+
+				  	// Here we are getting the current category given id number. This is called "term_id".
+				  	$current_category = get_queried_object();
+				  	if (is_a($current_category, 'WP_Term') && $current_category->taxonomy == 'category') {
+					  // Storing the id in a variable.
+					  $current_category_id = $current_category->term_id;
+
+					  if (function_exists('wpp_get_mostpopular')) {
+						  wpp_get_mostpopular(array(
+							  'limit' => 5,
+							  'range' => 'last7days',
+							  'order_by' => 'view',
+							  'taxonomy' => 'category', 
+							  'term_id' => $current_category_id,
+							  'stats_author' => 1,
+							  'wpp_start' => '<div class="popular-posts">',
+							  'wpp_end' => '</div>',
+							  'post_html' => '<div class="posts">
 											<span class="counter">{item_position}</span>
 											<span class="wrap">{title}</span>
 										</div>',
-				 ));
-				 }
-				 ?>
-		   </div>
+						  ));
+					  }
+				  } else {
+					  // If there is no category which will not happen. We fetch the top stories without the category.
+					  if (function_exists('wpp_get_mostpopular')) {
+						  	wpp_get_mostpopular(array(
+							  'limit' => 5,
+							  'range' => 'last7days',
+							  'order_by' => 'view',
+							  'stats_author' => 1,
+							  'wpp_start' => '<div class="popular-posts">',
+							  'wpp_end' => '</div>',
+							  'post_html' => '<div class="posts">
+											<span class="counter">{item_position}</span>
+											<span class="wrap">{title}</span>
+										</div>',
+						  	));
+					  	}
+				  	}
+				?>
+			</div>
 		</div>
-<!-- column content ends here -->
+		<!-- column content ends here -->
+  	</div>
   </div>
 </div>
-  </div>
 </main>
 <?php get_footer();?>
