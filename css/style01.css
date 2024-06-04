@@ -329,6 +329,15 @@ div.container {
   right: 15px;
 }
 
+/* // nav active indicator */
+.current-menu-item a,
+.current-post-parent a{
+	color: #008743 !important;
+}
+.current_page_item a{
+	color: #444444 !important;
+}
+
 @media (max-width: 1366px) {
   .nav-menu .drop-down .drop-down ul {
     left: -90%;
